@@ -1,0 +1,20 @@
+import requests
+
+headers = {
+    'Authorization': 'Bearer jina_7263f1233e234f639ab35eba500cf624LDzyJCSfuZAyrmZ3e8FsgJyY59OR',
+    'X-Return-Format': 'pageshot',  # 网页快照
+    'X-Engine': 'browser'  # 高质量搜索引擎
+}
+
+response = requests.get('https://r.jina.ai/https://pic.baidu.com', headers=headers)
+
+print(response.text)
+curl "https://r.jina.ai/https://pic.baidu.com" \
+  -H "Authorization: Bearer jina_7263f1233e234f639ab35eba500cf624LDzyJCSfuZAyrmZ3e8FsgJyY59OR" \
+  -H "X-Return-Format: pageshot"  # 网页快照 
+  -H "X-Engine: browser" \ #高质量搜索引擎
+  -H "Accept: application/json" \ #json相应
+  -H "X-With-Images-Summary: all" \ #集中图片和链接
+  -H "X-With-Links-Summary: all" \  #集中图片和链接
+  -H "X-With-Generated-Alt: true" \ #生成图片alt
+  -H "Accept: text/event-stream" \ #流式响应
